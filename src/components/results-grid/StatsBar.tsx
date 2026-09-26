@@ -340,7 +340,7 @@ export function StatsBar({
             <X strokeWidth={1.5} className="w-3 h-3" />
           </button>
         )}
-        {result.pagination?.wasLimited && (
+        {result.pagination?.wasLimited && (result.pagination.limit === undefined || result.rows.length >= result.pagination.limit) && (
           <span className="text-brand text-xs bg-brand-tint/10 px-2 py-0.5 rounded" title={AUTO_LIMIT_NOTICE}>
             {AUTO_LIMIT_BADGE}
             <span className="sr-only">: {AUTO_LIMIT_NOTICE}</span>
